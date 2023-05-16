@@ -1,14 +1,23 @@
+import java.util.ArrayList;
+
 public class Trace {
     
     private String caseID;
     private Event startEvent;
     private Event endEvent;
+    private ArrayList<Event> eventsList;
 
     public Trace(String caseID, Event startEvent, Event endEvent)
     {
         this.caseID = caseID;
         this.startEvent = startEvent;
         this.endEvent = endEvent;
+        this.eventsList = new ArrayList<Event>();
+    }
+
+    public void addEvent(Event event)
+    {
+        eventsList.add(event);
     }
 
     public String getCaseID()

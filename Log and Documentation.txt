@@ -11,3 +11,11 @@ provides constant time performance for basic operations such as add, remove, con
 10. ArrayList is the best friend I always wanted.
 11. Now, for the next step in Alpha Algorithm, we need to identify the start and end event of each case (trace). In a ticket system, each ticket is a case.
 12. Alright, I need to seriously debut the HashMapUh. It is HashMAPUH time.
+13. So far, we have done the following Alpha Algorithm steps:
+i) Task Log which is the unique activities method.
+ii) Task Initiation and Task Output for each case or trace. This is generate traces method.
+14. Now, we need to generate PL which is process log. This is unique traces.
+15. There are two ways I can approach this. Generate unique traces based on the order of the activities or through time stamps of start and end events.
+16. Generating based on set of activities in the trace sounds reasonable.
+17. I will include an array list in trace class and it will store the sequence of activities.
+18. Then, I will simply compare arraylists of each trace and if they are equal, I will not add it to the PL.

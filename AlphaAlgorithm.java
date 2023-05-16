@@ -15,7 +15,7 @@ public class AlphaAlgorithm {
         
     }
 
-    public void findUniqueActivities() //To generate set TL (Task Log), this will store unique activities
+    public void findUniqueActivities() //To generate set TL (Task Log) which is second requirement of assignment, this will store unique activities
     {
         for (int i = 0; i < eventsList.size(); i++)
         {
@@ -26,10 +26,10 @@ public class AlphaAlgorithm {
                 uniqueActivities.add(activity);
             }
         }
-        System.out.println("Unique Activities: " + uniqueActivities);
+        System.out.println("Successfully generated: " + uniqueActivities.size() + " unique activities");
     }
 
-    public void generateTraces()
+    public void generateTraces() //First requirement of the assignment is multi-set of traces L which means duplicate events are allowed. This is the method.
     {
         //Time to find the start and end event of each case. I will assume each ticket is a case.
         //Looking at my csv file, I already know Open and Closed are my start and end events respectively.
@@ -52,15 +52,39 @@ public class AlphaAlgorithm {
 
         for (String ticketNumber: startEvents.keySet())
         {
-            Event startEvent = startEvents.get(ticketNumber);
-            Event endEvent = endEvents.get(ticketNumber);
+            Event startEvent = startEvents.get(ticketNumber); //Start event is TI: Task Initiation
+            Event endEvent = endEvents.get(ticketNumber); //End event is TO: Task Output
 
             Trace trace = new Trace(ticketNumber, startEvent, endEvent);
             tracesList.add(trace);
         }
 
+        for (int i = 0; i < eventsList.size(); i++)
+        {
+            String ticketNumber = eventsList.get(i).getTicketNumber();
+
+            for (int j = 0; j < tracesList.size(); j++)
+            {
+                if (tracesList.get(j).getCaseID().equals(ticketNumber))
+                {
+                    tracesList.get(j).addEvent(eventsList.get(i));
+                }
+            }
+        }
+
         System.out.println("Successfully generated: " + tracesList.size() + " traces");
         
+    }
+
+    public void printTIAndTO() //This is third requirement of assignment. This will print out the start and end events of each trace (TI and TO)
+    {
+        for (int i = 0; i < tracesList.size(); i++)
+        {
+            System.out.println("Case ID: " + tracesList.get(i).getCaseID());
+            System.out.println("Start Event: " + tracesList.get(i).getStartEvent().getStatus());
+            System.out.println("End Event: " + tracesList.get(i).getEndEvent().getStatus());
+            System.out.println();
+        }
     }
     
 }
