@@ -19,3 +19,6 @@ ii) Task Initiation and Task Output for each case or trace. This is generate tra
 16. Generating based on set of activities in the trace sounds reasonable.
 17. I will include an array list in trace class and it will store the sequence of activities.
 18. Then, I will simply compare arraylists of each trace and if they are equal, I will not add it to the PL.
+19. Point 18 was discarded and instead hashmap will be used. For process log, we just need to look at order of activity for each trace or combination of activities.
+20. For point 20, we implement a simple arraylist containing statuses only. Then use a hashmap to use it as key so that it picks lists with unique statuses.
+21. Implementing this brb. This will conclude 4 requirements of assignment.

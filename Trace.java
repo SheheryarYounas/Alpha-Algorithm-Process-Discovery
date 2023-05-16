@@ -6,6 +6,7 @@ public class Trace {
     private Event startEvent;
     private Event endEvent;
     private ArrayList<Event> eventsList;
+    private ArrayList<String> statusList; //This is for process log, we will differentiate each trace by its status list
 
     public Trace(String caseID, Event startEvent, Event endEvent)
     {
@@ -13,6 +14,33 @@ public class Trace {
         this.startEvent = startEvent;
         this.endEvent = endEvent;
         this.eventsList = new ArrayList<Event>();
+        this.statusList = new ArrayList<String>();
+    }
+
+    public void printEvents()
+    {
+        for (int i = 0; i < eventsList.size(); i++)
+        {
+            System.out.println("Event " + (i + 1) + ": " + eventsList.get(i).getStatus() + " at " + eventsList.get(i).getTime() + " by " + eventsList.get(i).getOwner() + " in " + eventsList.get(i).getGroupName());
+        }
+    }
+
+    public void populateStatusList()
+    {
+        for (int i = 0; i < eventsList.size(); i++)
+        {
+            statusList.add(eventsList.get(i).getStatus());
+        }
+    }
+
+    public ArrayList<String> getStatusList()
+    {
+        return statusList;
+    }
+
+    public ArrayList<Event> getEventsList()
+    {
+        return eventsList;
     }
 
     public void addEvent(Event event)

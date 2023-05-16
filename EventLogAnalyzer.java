@@ -30,24 +30,21 @@ class EventLogAnalyzer {
                         continue;
                     }
 
-                    for (int i = 0; i < read_line.length; i = i + 1)
-                    {
-                        //Now, I am gonna read each column separately so they are in separate arrays
-                        //For future use, modify the below variables to the column names of the csv file
+                   
+                    //Now, I am gonna read each column separately so they are in separate arrays
+                    //For future use, modify the below variables to the column names of the csv file
                         
-                        String ticketNumberTemp = read_line[0];
-                        String statusTemp = read_line[1];
-                        String timeTemp = read_line[2];
-                        String groupNameTemp = read_line[3];
-                        String owner = read_line[4];
+                    String ticketNumberTemp = read_line[0];
+                    String statusTemp = read_line[1];
+                    String timeTemp = read_line[2];
+                    String groupNameTemp = read_line[3];
+                    String owner = read_line[4];
                         
-                        //I will take the values and create event objects
-                        Event event = new Event(ticketNumberTemp, statusTemp, timeTemp, groupNameTemp, owner);
-                        eventsList.add(event);  
-                    }
+                    //I will take the values and create event objects
+                    Event event = new Event(ticketNumberTemp, statusTemp, timeTemp, groupNameTemp, owner);
+                    eventsList.add(event);  
                 }
-
-            } 
+            }
             
             catch (IOException e)
             {
