@@ -7,5 +7,7 @@
 provides constant time performance for basic operations such as add, remove, contains and size. This is because it uses hashing to store elements.
 7. HASH MAPUH for the win.
 8. Time to implement.
-9. Okay, actually returning to the less efficient method. Will implement it later, promise.
+9. Okay, actually returning to the less efficient method. Will implement it later.
 10. ArrayList is the best friend I always wanted.
+11. Now, for the next step in Alpha Algorithm, we need to identify the start and end event of each case (trace). In a ticket system, each ticket is a case.
+12. Alright, I need to seriously debut the HashMapUh. It is HashMAPUH time.

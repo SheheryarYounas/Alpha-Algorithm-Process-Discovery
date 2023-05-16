@@ -17,5 +17,6 @@ public class Main {
         
         AlphaAlgorithm alphaAlgorithm = new AlphaAlgorithm(eventsList);
         alphaAlgorithm.findUniqueActivities();
+        alphaAlgorithm.generateTraces();
     }
 }
