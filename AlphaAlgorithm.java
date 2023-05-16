@@ -86,5 +86,7 @@ public class AlphaAlgorithm {
             System.out.println();
         }
     }
+
+    
     
 }
