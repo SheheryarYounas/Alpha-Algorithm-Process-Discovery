@@ -1,0 +1,11 @@
+1. I have successfully imported the CSV file, read it and generated events out of it.
+2. Now the first step in the alpha algorithm is to identify unique tasks or unique statuses performed in the event log. Looking at the csv file, the status column contains the activities performed.
+3. I will gather all the unique activities. Let's see how this goes. Luckily, there is already a status column. I will just use that.
+4. I have learned that a set such as HashSet and TreeSet can be used to store unique values and is efficient. For now, I am going with the less efficient approach. Adding this to improvements I can implement later.
+5. Okay, this looks way too impressive to ignore. I am going to use a hashset. Sounds cool too.
+6. So, the Hash Set is part of the Set interface in Java. It basically stores unique values and stores them in a random order (not sorted). The best part of this is that it
+provides constant time performance for basic operations such as add, remove, contains and size. This is because it uses hashing to store elements.
+7. HASH MAPUH for the win.
+8. Time to implement.
+9. Okay, actually returning to the less efficient method. Will implement it later, promise.
+10. ArrayList is the best friend I always wanted.

@@ -15,5 +15,7 @@ public class Main {
         
         System.out.println("Successfully acquired: " + eventsList.size() + " events");
         
+        AlphaAlgorithm alphaAlgorithm = new AlphaAlgorithm(eventsList);
+        alphaAlgorithm.findUniqueActivities();
     }
 }
