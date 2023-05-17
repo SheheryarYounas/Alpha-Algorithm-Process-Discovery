@@ -163,11 +163,6 @@ public class ProcessModelFinder extends JPanel { //JPanel will be my container
     //     graphic.setFont(font);
     //         ArrayList<String> statusList = new ArrayList<String>();
     //         statusList.add("Start");
-    //         statusList.add("Pepsid him");
-    //         statusList.add("Balled him");
-    //         statusList.add("Called him");
-    //         statusList.add("Dolled him");
-    //         statusList.add("Eat pepsi");
     //         statusList.add("Ferrari");
     //         statusList.add("Closed");
     //         System.out.println(statusList.toString());

@@ -24,13 +24,14 @@ public class Main {
 
         do
         {
-            System.out.println("Please select an option: ");
-            System.out.println("1. Generate and print multi-set of traces");
-            System.out.println("2. Generate and print Task Log");
-            System.out.println("3. Print TI and TO of each trace");
-            System.out.println("4. Generate and print Process Log");
+            System.out.println("Please select an option (Do the steps in order): ");
+            System.out.println("1. Generate and print multi-set of traces (Requirement 1: L)");
+            System.out.println("2. Generate and print Task Log (Requirement 4)(Unique Activities that represent places PL in the process model)");
+            System.out.println("3. Print TI and TO of each trace (Requirement 3)");
+            System.out.println("4. Generate and print Process Log (Requirement 2)(TL: Unique Traces)");
             System.out.println("5. Generate and print Frequency Log");
-            System.out.println("6. Output the resultant process");
+            System.out.println("6. Output the Direct Successors, Causality, Parallel and Exclusive Relations (Requirement 5: FL or Arcs in the process model)");
+            System.out.println("7. Exit Program");
 
             option = input.nextInt();
 
