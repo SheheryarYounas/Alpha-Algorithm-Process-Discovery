@@ -28,7 +28,8 @@ public class Main {
             System.out.println("2. Generate and print Task Log");
             System.out.println("3. Print TI and TO of each trace");
             System.out.println("4. Generate and print Process Log");
-            System.out.println("5. Exit Program");
+            System.out.println("5. Generate and print Frequency Log");
+            System.out.println("6. Output the resultant process");
 
             option = input.nextInt();
 
@@ -54,9 +55,14 @@ public class Main {
 
             else if (option == 5)
             {
-                System.out.println("Exiting Program");
+                alphaAlgorithm.generateFrequencyLog();
             }
 
-        } while (option != 5);
+            else if (option == 6)
+            {
+                System.out.println("Exiting");
+            }
+
+        } while (option != 6);
     }
 }

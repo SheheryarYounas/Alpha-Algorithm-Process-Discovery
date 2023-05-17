@@ -7,6 +7,7 @@ public class AlphaAlgorithm {
     private ArrayList<String> uniqueActivities;
     private HashMap<String, Trace> tracesList;
     private HashMap<ArrayList<String>, Integer> processLog; //The trace arraylist as key and Integer is for telling how many unique traces there are
+    private HashMap<String, Integer> frequencyLog;
 
     public AlphaAlgorithm(ArrayList<Event> eventsList)
     {
@@ -14,6 +15,7 @@ public class AlphaAlgorithm {
         this.uniqueActivities = new ArrayList<String>();
         this.tracesList = new HashMap<String, Trace>();
         this.processLog = new HashMap<ArrayList<String>, Integer>();
+        this.frequencyLog = new HashMap<String, Integer>();
         
     }
 
@@ -151,6 +153,34 @@ public class AlphaAlgorithm {
 
         System.out.println("Successfully generated: " + processLog.size() + " unique traces in the process log");
 
+    }
+
+    public void generateFrequencyLog() //Counting frequency of each activity
+    {
+         for (String TicketNumber: tracesList.keySet())
+         {
+            Trace trace = tracesList.get(TicketNumber);
+            ArrayList<String> statusList = trace.getStatusList(); //Get list of activities from each trace
+
+            for (String activity: statusList) //Now check each activity in that trace, if activity found first time, put it in HashMap and give it frequency 1, otherwise increment
+            {
+                if (frequencyLog.containsKey(activity))
+                {
+                    int frequency = frequencyLog.get(activity);
+                    frequencyLog.put(activity, frequency + 1);
+                    
+                }
+
+                else{
+                    frequencyLog.put(activity, 1);
+                }
+            }
+         }
+
+         for (String activity: frequencyLog.keySet())
+         {
+             System.out.println("Activity: " + activity + " Frequency: " + frequencyLog.get(activity));
+         }
     }
 
     
