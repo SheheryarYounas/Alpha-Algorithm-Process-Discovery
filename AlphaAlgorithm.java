@@ -119,6 +119,16 @@ public class AlphaAlgorithm {
             System.out.println("For Ticket Number: " + ticketNumber);
             System.out.println("TI: " + tracesList.get(ticketNumber).getStartEvent().getStatus() + " at " + tracesList.get(ticketNumber).getStartEvent().getTime() + " by " + tracesList.get(ticketNumber).getStartEvent().getOwner() + " in " + tracesList.get(ticketNumber).getStartEvent().getGroupName());
             System.out.println("TO: " + tracesList.get(ticketNumber).getEndEvent().getStatus() + " at " + tracesList.get(ticketNumber).getEndEvent().getTime() + " by " + tracesList.get(ticketNumber).getEndEvent().getOwner() + " in " + tracesList.get(ticketNumber).getEndEvent().getGroupName());
+            // if (tracesList.get(ticketNumber).getStartEvent().getStatus().equals("Assignment"))
+            // {
+            //     break;
+            // } If Sir Naveed asks for proof, use this
+
+            // if (!tracesList.get(ticketNumber).getEndEvent().getStatus().equals("Closed"))
+            // {
+            //     System.out.println("This trace is not closed");
+            //     break;
+            // }
         }
     }
 
@@ -193,10 +203,10 @@ public class AlphaAlgorithm {
         // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // frame.setSize(400, 400);
         // frame.setVisible(true);
-
-        GraphGenerator graphGenerator = new GraphGenerator(tracesList);
-        graphGenerator.findSequence();
-        graphGenerator.testPrint();
+        ProcessModelFinder finder = new ProcessModelFinder(tracesList, uniqueActivities);
+        finder.findDirectSuccessors();
+        finder.testPrint();
+        
     }
 
     
