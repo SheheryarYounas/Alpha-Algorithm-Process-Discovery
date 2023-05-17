@@ -61,12 +61,7 @@ public class Main {
 
             else if (option == 6)
             {
-                GraphGenerator graphGenerator = new GraphGenerator();
-        JFrame frame = new JFrame("Process Flow Chart");
-        frame.add(graphGenerator);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1200, 1200);
-        frame.setVisible(true);
+               alphaAlgorithm.passTracesToGraphGenerator();
             }
 
             else if (option == 7)

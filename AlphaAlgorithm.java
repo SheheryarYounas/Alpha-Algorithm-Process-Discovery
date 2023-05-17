@@ -104,8 +104,8 @@ public class AlphaAlgorithm {
 
         for (String ticketNumber: tracesList.keySet())
         {
-            System.out.println("For Ticket Number: " + ticketNumber); //I will include a method to print events of traces in trace class
-            tracesList.get(ticketNumber).printEvents();
+           //!! System.out.println("For Ticket Number: " + ticketNumber); //I will include a method to print events of traces in trace class
+            //!!tracesList.get(ticketNumber).printEvents();
         }
 
         System.out.println("Successfully generated: " + tracesList.size() + " traces");
@@ -133,7 +133,7 @@ public class AlphaAlgorithm {
         {
             tracesList.get(TicketNumber).populateStatusList();
             ArrayList<String> statusList = tracesList.get(TicketNumber).getStatusList();
-            System.out.println(statusList.toString());
+            //!!System.out.println(statusList.toString());
             processLog.put(statusList, index_for_process_log++);
         }
 
@@ -144,12 +144,12 @@ public class AlphaAlgorithm {
 
         for (ArrayList<String> statusList: processLog.keySet()) //Now, I will print each of the events list
         {
-            System.out.println("Unique Trace: " + counter + 1);
+            //!!System.out.println("Unique Trace: " + counter + 1);
             counter++;
             
             for (int i = 0; i < statusList.size(); i++)
             {
-                System.out.println("Event " + (i + 1) + ": " + statusList.get(i));
+                //!!System.out.println("Event " + (i + 1) + ": " + statusList.get(i));
             }
         }
 
@@ -187,13 +187,16 @@ public class AlphaAlgorithm {
 
     public void passTracesToGraphGenerator()
     {
-        GraphGenerator graphGenerator = new GraphGenerator(tracesList);
-        JFrame frame = new JFrame("Process Flow Chart");
-        frame.add(graphGenerator);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 400);
-        frame.setVisible(true);
+        // GraphGenerator graphGenerator = new GraphGenerator(tracesList);
+        // JFrame frame = new JFrame("Process Flow Chart");
+        // frame.add(graphGenerator);
+        // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // frame.setSize(400, 400);
+        // frame.setVisible(true);
 
+        GraphGenerator graphGenerator = new GraphGenerator(tracesList);
+        graphGenerator.findSequence();
+        graphGenerator.testPrint();
     }
 
     
