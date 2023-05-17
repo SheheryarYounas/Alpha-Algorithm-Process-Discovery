@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JFrame;
 
 public class Main {
     //Including the exception again for the while loop here
@@ -60,9 +61,24 @@ public class Main {
 
             else if (option == 6)
             {
-                System.out.println("Exiting");
+                GraphGenerator graphGenerator = new GraphGenerator();
+        JFrame frame = new JFrame("Process Flow Chart");
+        frame.add(graphGenerator);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1200, 1200);
+        frame.setVisible(true);
             }
 
-        } while (option != 6);
+            else if (option == 7)
+            {
+                System.out.println("Exiting Program");
+            }
+
+            else
+            {
+                System.out.println("Invalid Option");
+            }
+
+        } while (option != 7);
     }
 }

@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.swing.JFrame;
+
 public class AlphaAlgorithm {
 
     private ArrayList<Event> eventsList;
@@ -181,6 +183,17 @@ public class AlphaAlgorithm {
          {
              System.out.println("Activity: " + activity + " Frequency: " + frequencyLog.get(activity));
          }
+    }
+
+    public void passTracesToGraphGenerator()
+    {
+        GraphGenerator graphGenerator = new GraphGenerator(tracesList);
+        JFrame frame = new JFrame("Process Flow Chart");
+        frame.add(graphGenerator);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 400);
+        frame.setVisible(true);
+
     }
 
     
